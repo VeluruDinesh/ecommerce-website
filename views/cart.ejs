@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/cart.css">
+</head>
+
+<body>
+  <%- include("partials/header.ejs") %>
+  
+  <% if (cart.length === 0) { %>
+    <p>Your cart is empty.</p>
+  <% } else { %>
+
+      
+  <div class="cart">
+    <div class="cart-left">
+        <h1>Shopping Cart</h1>
+        <hr>
+        <% cart.forEach(item => { %>
+        <div class="product-cart-list">
+            <img src="<%= item.product.img %>" width="180px" alt="">
+            <div class="card-details">
+                <div class="product-cart-titleprice">
+                    <p> <%= item.product.name %></p>
+                    <p><b>$<%= item.product.price %></b></p>
+                </div>
+                <p class="product-cart-bestseller"><span>#1 Best Seller</span> in PC Game Headsets</p>
+                <p class="product-cart-stock">In Stock</p>
+                <p class="product-cart-delivery">FREE delivery <b>Mon, Jan 29</b> on $35 of items shipped by Smart Shop
+                </p>
+                <p class="product-cart-returns">FREE Returns ⮷</p>
+                <p class="product-cart-giftoption"><input type="checkbox"> This is a gift <span>Learn more</span>
+                </p>
+                <div class="product-cart-specs">
+                    <p><b>Style:</b></p>
+                    <p>Wired</p>
+                    <p><b>Size:</b></p>
+                    <p>Free</p>
+                    <p><b>Color:</b></p>
+                    <p>Blue</p>
+                </div>
+                <div class="product-cart-list-action">
+                    <p>Quantity:<%=item.quantity%></p>
+                    <hr>
+                    <form action="/remove-from-cart" method="POST" style="display:inline;">
+                      <input type="hidden" name="productId" value="<%= item.product.id %>">
+                      <button type="submit">Remove</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="cart-list-subtotal">
+            
+            
+            
+        </div>
+        <% }) %>
+    </div>
+    <div class="cart-right">
+        <div class="cart-free-delivery">
+            <p>✅</p>
+            <p>Your order qualifies for FREE Shipping. <br> Choose this option at checkout. <br> See details</p>
+        </div>
+        <p class="cart-subtotal">Subtotal : <b>$<%= cart.reduce((total, item) => total + item.product.price * item.quantity, 0).toFixed(2) %></b></b></p>
+        <p class="cart-right-gift"><input type="checkbox"> This order contains a gift</p>
+        <button>Proceed to checkout</button>
+    </div>
+</div>
+    
+    <% } %>
+  <%- include("partials/footer.ejs") %>
+
+
+</body></html>

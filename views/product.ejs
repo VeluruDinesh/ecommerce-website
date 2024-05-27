@@ -1,0 +1,70 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/product.css">
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+
+       
+    
+       
+    
+        <div class="product-display">
+            <div class="product-d-image">
+                <div class="product-list-image">
+                    <img src="<%= product.img %>" width="60" alt="">
+                    <img src="<%= product.img %>" width="60" alt="">
+                    <img src="<%= product.img %>" width="60" alt="">
+                    <img src="<%= product.img %>" width="60" alt="">
+                    <img src="<%= product.img %>" width="60" alt="">
+                </div>
+                <div class="product-main-image">
+                    <img src="<%= product.img %>" width="400" alt="">
+                </div>
+            </div>
+            <div class="product-d-details">
+                <p class="product-title">
+                    <%= product.discription %></p>
+                    <h3>price:<%= product.price %></h3>
+                
+                <h2 class="product-stock">In Stock</h2>
+                
+                
+                
+                <form action="/addtocart" method="POST" style="display:inline;">
+                    <input type="hidden" name="productId" value="<%= product.id %>">
+                    <input type="number" name="quantity" value="1" min="1">
+                   
+                    <button class="btn">
+                        Add to Cart
+                    </button>
+                  </form>
+                
+                <button class="btn product-buy">
+                    Buy Now
+                </button>
+                <div class="product-seller-info">
+                    <p>Ships from</p>
+                    <p class="product-info-value">Smart Shop</p>
+                    <p>Sold by</p>
+                    <p class="product-info-value">Bengoo Inc.</p>
+                    <p>Returns</p>
+                    <p class="product-info-value">Eligible for Return, Refund or Replacement within 30 days of receipt</p>
+                    <p>Payment</p>
+                    <p class="product-info-value">Secure transaction</p>
+                </div>
+                
+            </div>
+        </div>
+    
+    
+
+    
+    </body></html>
+    <%- include("partials/footer.ejs") %>
+</body></html>

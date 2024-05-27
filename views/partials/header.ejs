@@ -1,0 +1,37 @@
+
+
+    <nav>
+        <a href="/home"><img src="https://cdn-icons-png.flaticon.com/512/3225/3225194.png" width="100" height="40" alt=""></a>
+        <div class="nav-country">
+            
+        </div>
+        <div class="nav-search">
+            
+            <input type="text" class="nav-search-input" name="search" placeholder="Search Smart Shop">
+           
+            <img src="./assets/search_icon.png" class="nav-search-icon" alt="">
+        
+        
+        </div>
+        <div class="nav-texts">
+            <% if (locals.user){ %>
+                <p><%= user %></p>
+                <% } else { %>
+
+                
+            <p><a href="/login">Hello, sign in</a></p>
+            <h1>Account &amp; Lists <img src="./assets/dropdown_icon.png" width="8px" alt=""> </h1>
+            <%}%>
+        </div>
+        <div class="nav-texts">
+            <p>Returns</p>
+            <h1>&amp; Orders</h1>
+        </div>
+        <a href="/login" class="mobile-user-icon" style="display: none;">
+            <img src="./assets/user.png">
+        </a>
+        <a href="/cart" class="nav-cart">
+            <img src="./assets/cart_icon.png" width="35px" alt="">
+            <h4 >Cart</h4>
+        </a>
+    </nav>

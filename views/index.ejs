@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <%- include ("partials/header.ejs") %>
+  
+    <div class="header-box box-row">
+        <div class="box-col">
+            <h3><%= products[0].name %></h3>
+            <img src="<%= products[0].img %>" alt="">
+            <form action="/product" method="POST" style="display:inline;">
+              <input type="hidden" name="productId" value="<%= products[0].id %>">
+              <button type="submit">Details</button>
+            </form>
+        </div>
+        <div class="box-col">
+            <h3><%= products[1].name %></h3>
+            <img src="<%= products[1].img %>" alt="">
+            <form action="/product" method="POST" style="display:inline;">
+              <input type="hidden" name="productId" value="<%= products[1].id %>">
+              <button type="submit">Details</button>
+            </form>
+        </div>
+        <div class="box-col">
+            <h3><%= products[2].name %></h3>
+            <img src="<%= products[2].img %>" alt="">
+            <form action="/product" method="POST" style="display:inline;">
+              <input type="hidden" name="productId" value="<%= products[2].id %>">
+              <button type="submit">Details</button>
+            </form>
+        </div>
+        <div class="box-col">
+            <h3><%= products[3].name %></h3>
+            <img src="<%= products[3].img %>" alt="">
+            <form action="/product" method="POST" style="display:inline;">
+              <input type="hidden" name="productId" value="<%= products[3].id %>">
+              <button type="submit">Details</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="box-row">
+        <div class="box-col">
+            <h3><%= products[4].name %></h3>
+            <img src="<%= products[4].img %>" alt="">
+            <form action="/product" method="POST" style="display:inline;">
+              <input type="hidden" name="productId" value="<%= products[4].id %>">
+              <button type="submit">Details</button>
+            </form>
+        </div>
+        <div class="box-col">
+            <h3><%= products[5].name %></h3>
+            <img src="<%= products[5].img %>" alt="">
+            
+            <form action="/product" method="POST" style="display:inline;">
+              <input type="hidden" name="productId" value="<%= products[5].id %>">
+              <button type="submit">Details</button>
+            </form>
+        </div>
+        <div class="box-col">
+            <h3><%= products[6].name %></h3>
+            <img src="<%= products[6].img %>" alt="">
+            
+            <form action="/product" method="POST" style="display:inline;">
+              <input type="hidden" name="productId" value="<%= products[6].id %>">
+              <button type="submit">Details</button>
+            </form>
+        </div>
+        <div class="box-col">
+            <h3><%= products[7].name %></h3>
+            <img src="<%= products[7].img %>" alt="">
+            <form action="/product" method="POST" style="display:inline;">
+              <input type="hidden" name="productId" value="<%= products[7].id %>">
+              <button type="submit">Details</button>
+            </form>
+            
+        </div>
+    </div>
+
+
+
+
+   <%- include("partials/footer.ejs") %>
+</body>
+</html>
